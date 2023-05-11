@@ -1,0 +1,197 @@
+$cellSize: 1rem !default;
+
+@mixin change($cellSize) {
+  .humanCell,
+  .aiCell {
+    width: $cellSize;
+    height: $cellSize;
+  }
+  .cell {
+    width: $cellSize;
+    height: $cellSize;
+  }
+}
+
+$cellSize: 2rem !default;
+$padding: 1rem;
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  background-color: black;
+}
+
+header {
+  align-self: center;
+  background-color: black;
+  padding: 0.5rem;
+  font-size: 2rem;
+  :nth-child(1) {
+    color: white;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+}
+
+.reports-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & :nth-child(1) {
+    color: white;
+  }
+}
+
+.boards-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.human-board,
+.ai-board {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-items: center;
+  align-content: center;
+  padding: $padding;
+  background-color: gray;
+  border-radius: 1rem;
+  gap: 1rem;
+}
+
+.humanCell,
+.aiCell {
+  border: solid black;
+  background-color: black;
+  width: $cellSize;
+  height: $cellSize;
+  &:hover {
+    border: solid white;
+    cursor: pointer;
+  }
+}
+
+.ship-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.ship-background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: gray;
+  padding: 1rem;
+  width: 20vw;
+  height: 30vh;
+  min-width: 250px;
+  border-radius: 1rem;
+  gap: 1rem;
+}
+
+.ship-selector {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: gray;
+}
+
+.ship-orderer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: gray;
+  gap: 1rem;
+}
+
+.draggableShip {
+  pointer-events: all;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: solid black;
+  background-color: black;
+  gap: 2px;
+  &:hover {
+    border: solid white;
+    cursor: pointer;
+  }
+}
+
+.cell {
+  background-color: green;
+  width: $cellSize;
+  height: $cellSize;
+  pointer-events: none;
+}
+
+.start-button,
+.random-start-button {
+  max-width: 20vw;
+  align-self: center;
+}
+
+.start-button {
+  display: none;
+}
+
+.end-game-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  visibility: hidden;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: gray;
+  width: 100vw;
+  height: 40vh;
+  opacity: 0.8;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+}
+
+.victory-text {
+  opacity: 1;
+}
+
+@media only screen and (min-width: 1101px) {
+  @include change($cellSize: 2rem);
+  .human-board,
+  .ai-board {
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  @include change($cellSize: 1rem);
+  .human-board,
+  .ai-board {
+    padding: 0.5rem;
+    gap: 1vw;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  @include change($cellSize: 16px);
+  .human-board,
+  .ai-board {
+    padding: 0.5rem;
+    gap: 1vw;
+  }
+}

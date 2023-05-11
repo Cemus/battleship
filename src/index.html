@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battleship</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Battleship</h1>
+      </header>
+      <button id="startButton" class="start-button" type="button">Start</button>
+      <button id="randomStartButton" class="random-start-button" type="button">
+        Random Start
+      </button>
+      <div class="reports-container">
+        <p id="reports"></p>
+      </div>
+      <div id="boardContainer" class="boards-container">
+        <div id="humanBoard" class="human-board"></div>
+        <div class="ship-container">
+          <button id="rotateShip" type="button">Rotate</button>
+          <div class="ship-background">
+            <div id="shipSelector" class="ship-selector">
+              <div draggable="true" class="draggableShip">
+                <div class="cell"></div>
+              </div>
+              <div id="shipOrderer" class="ship-orderer">
+                <div draggable="true" class="draggableShip">
+                  <div class="cell"></div>
+                  <div class="cell"></div>
+                </div>
+                <div draggable="true" class="draggableShip">
+                  <div class="cell"></div>
+                  <div class="cell"></div>
+                  <div class="cell"></div>
+                </div>
+                <div draggable="true" class="draggableShip">
+                  <div class="cell"></div>
+                  <div class="cell"></div>
+                  <div class="cell"></div>
+                  <div class="cell"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="end-game-screen">
+      <p class="victory-text">text</p>
+      <button class="play-again" type="button">Play again ?</button>
+    </div>
+  </body>
+</html>
