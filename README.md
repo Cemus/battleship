@@ -14,7 +14,7 @@
 <br />
 <div align="center">
 <a href='https://github.com/Cemus/battleship'>
-<img src="public/favicon.svg" alt="Logo" width="80" height="80">
+<img src="src/assets/favicon.svg" alt="Logo" width="80" height="80">
 </a>
 
 <h3 align='center'>Bataille Navale</h3>
