@@ -46,6 +46,6 @@ module.exports = {
       filename: "[name].css",
       chunkFilename: "[id].css",
     }),
-    new FaviconsWebpackPlugin("./src/images/favicon.svg"),
+    new FaviconsWebpackPlugin("./src/assets/favicon.svg"),
   ],
 };
