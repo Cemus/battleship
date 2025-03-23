@@ -16,7 +16,6 @@ const Player = (human, board) => {
   const setHuntMode = (boolean, cell = null) => {
     aiHuntingState = boolean;
     aiTargetCell = cell;
-    console.log(cell);
   };
   const isStandby = (boolean) => {
     if (boolean === false) {
@@ -29,7 +28,6 @@ const Player = (human, board) => {
   const turn = () => {
     if (board.gameOver !== true && opponentsBoard.gameOver !== true) {
       if (human) {
-        console.log(board);
         report(`Your turn`);
         setTimeout(() => {
           humanAttack();
@@ -88,8 +86,6 @@ const Player = (human, board) => {
         element = parseInt(element);
         let targetCell = aiTargetCell.id.match(onlyDigits).toString();
         targetCell = parseInt(targetCell);
-        console.log(targetCell);
-        console.log(element);
         if (
           targetCell + 1 === element ||
           targetCell - 1 === element ||
@@ -104,7 +100,6 @@ const Player = (human, board) => {
         }
       }
     }
-    console.log("cell" + cell);
     opponentsBoard.receiveAttack(cell, human);
     standby = true;
     setTimeout(() => {

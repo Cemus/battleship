@@ -12,7 +12,6 @@ const Gameboard = () => {
   };
   const placeShip = (ship) => {
     fleet.push(ship);
-    console.log(ship);
     DomManip().fleetCreation(fleet, isHuman);
   };
   const isDefeated = () => {
@@ -23,20 +22,16 @@ const Gameboard = () => {
     for (let i = 0; i < coordinateShoot.length; i++) {
       const element = coordinateShoot[i];
       if (cell === element) {
-        report("Déjà attaquée, choisissez une autre case");
+        report("Cell already attacked!");
         return false;
       }
     }
     return true;
   };
   const receiveAttack = (cell, human) => {
-    console.log(fleet);
-    console.log(fleet.length);
     const onlyDigits = /\d/g;
-    console.log(`cell ${cell.id}`);
     for (let i = 0; i < fleet.length; i++) {
       const ship = fleet[i];
-      console.log(ship);
       for (let j = 0; j < ship.position.length; j++) {
         const shipCoordinate = ship.position[j].match(onlyDigits).toString();
         if (
@@ -67,7 +62,7 @@ const Gameboard = () => {
       }
     }
     coordinateShoot.push(cell);
-    report("Aucune cible");
+    report("Nothing here...");
     return DomManip().miss(cell);
   };
 
